@@ -1,4 +1,4 @@
-package baekjoon.hashmap;
+package baekjoon.hashset;
 
 import java.io.BufferedReader;
 import java.io.IOException;

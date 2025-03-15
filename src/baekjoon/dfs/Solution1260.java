@@ -38,12 +38,12 @@ public class Solution1260 {
         }
 
         StringBuilder sb = new StringBuilder();
-        StringBuilder sb2 = new StringBuilder();
         dfs(v, sb);
         System.out.println(sb.toString().trim());
 
         Arrays.fill(visited, false);
 
+        StringBuilder sb2 = new StringBuilder();
         bfs(v, sb2);
         System.out.println(sb2.toString().trim());
     }

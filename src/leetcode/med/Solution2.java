@@ -1,6 +1,6 @@
-package leetcode;
+package leetcode.med;
 
-public class TwoNumbers {
+public class Solution2 {
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode head = new ListNode(0);

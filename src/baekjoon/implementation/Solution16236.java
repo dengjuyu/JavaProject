@@ -32,19 +32,19 @@ public class Solution16236 {
     // 먹이 찾기
     public static void bfs() {
         while (true) {
+            // 거리 -> 행 -> 열 순으로 정렬
             PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> {
-                if (a[2] == b[2]) {
-                    if (a[0] == b[0]) return a[1] - b[1];
-                    return a[0] - b[0];
+                if (a[2] == b[2]) { // 거리가 같다면
+                    if (a[0] == b[0]) return a[1] - b[1]; // 행이 같다면
+                    return a[0] - b[0]; // 행 우선 정렬
                 }
-                return a[2] - b[2];
+                return a[2] - b[2]; // 거리 우선 정렬
             });
 
             Queue<int[]> queue = new LinkedList<>();
             boolean[][] visited = new boolean[N][N];
             queue.add(new int[]{shark.x, shark.y, 0});
             visited[shark.x][shark.y] = true;
-            boolean found = false;
 
             while (!queue.isEmpty()) {
                 int[] current = queue.poll();
@@ -62,7 +62,6 @@ public class Solution16236 {
                             queue.add(new int[]{nx, ny, dist + 1});
                             if (space[nx][ny] > 0 && space[nx][ny] < shark.size) {
                                 pq.add(new int[]{nx, ny, dist + 1});
-                                found = true;
                             }
                         }
                     }
